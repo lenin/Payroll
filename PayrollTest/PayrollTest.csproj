@@ -1,0 +1,78 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F4F12D6-C83C-4766-B10A-E52DF1DC2831}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayrollTest</RootNamespace>
+    <AssemblyName>PayrollTest</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.4.7.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UI\AddEmployeePresenterTest.cs" />
+    <Compile Include="LoadClassificationOperationTest.cs" />
+    <Compile Include="LoadEmployeeOperationTest.cs" />
+    <Compile Include="LoadPaymentMethodOperationTest.cs" />
+    <Compile Include="PayrollTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlPayrollDatabaseTest.cs" />
+    <Compile Include="UI\AddEmployeeWindowTest.cs" />
+    <Compile Include="UI\MockAddEmployeeView.cs" />
+    <Compile Include="UI\MockPayrollPresenter.cs" />
+    <Compile Include="UI\MockPayrollView.cs" />
+    <Compile Include="UI\MockTransaction.cs" />
+    <Compile Include="UI\MockViewLoader.cs" />
+    <Compile Include="UI\PayrollPresenterTest.cs" />
+    <Compile Include="UI\PayrollWindowTest.cs" />
+    <Compile Include="UI\TransactionContainerTest.cs" />
+    <Compile Include="UI\WindowLoaderTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PayrollGUI\PayrollGUI.csproj">
+      <Project>{4060500A-272C-4ADE-9627-031FE3AA0E50}</Project>
+      <Name>PayrollGUI</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Payroll\Payroll.csproj">
+      <Project>{CA9A01DF-2468-4F72-B6F5-BC6F5624F66D}</Project>
+      <Name>Payroll</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
